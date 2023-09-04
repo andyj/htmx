@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HX-GET</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="htmx.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col">
+      <h1><code>hx-target</code> and <code>hx-get</code> Examples</h1>
+    </div>
+  </div>
+
+  <!-- CSS Query Selector Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      A CSS query selector of the element to target.
+    </div>
+    <div class="card-body">
+      <button hx-get="/getpage" hx-target="#cssSelectorExample" class="btn btn-primary">CSS Selector Target</button>
+      <div id="cssSelectorExample">
+        <p>Content to replace via CSS Selector.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- this Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      <p><code>this</code> which indicates that the element that the hx-target attribute is on is the target.</p>
+    </div>
+    <div class="card-body">
+      <button hx-get="/getpage" hx-target="this" class="btn btn-secondary"><b>this</b> Target</button>
+      <em>Content will be replaced in the button itself</em>
+    </div>
+  </div>
+
+  <!-- closest Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      <p><code>closest &lt;CSS selector></code> which will find the closest ancestor element or itself, that matches the given CSS selector (e.g. closest tr will target the closest table row to the element).</p>
+    </div>
+    <div class="card-body">
+      <div class="closest-target">
+        <button hx-get="/getpage" hx-target="closest .closest-target" class="btn btn-success">closest Target</button>
+        <p>Content to replace via closest selector.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- find Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      <code>find &lt;CSS selector></code> which will find the first child descendant element that matches the given CSS selector.
+    </div>
+    <div class="card-body">
+      <div class="find-target">
+
+
+        <button hx-get="/getpage" hx-target="find .find-internal" class="btn btn-danger">
+          find Target
+          <div class="find-internal">
+            <p>Content to replace via find selector.</p>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- next Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      <code>next &lt;CSS selector></code> which will scan the DOM forward for the first element that matches the given CSS selector. (e.g. <code>next .error</code> will target the closest following sibling element with <code>error</code> class)
+    </div>
+    <div class="card-body">
+      <button hx-get="/getpage" hx-target="next .next-target" class="btn btn-warning">next Target</button>
+      <div class="next-target">
+        <p>Content to replace via next selector.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- previous Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      <code>previous &lt;CSS selector&gt;</code> which will scan the DOM backwards for the first element that matches the given CSS selector. (e.g. <code>previous .error</code> will target the closest previous sibling with <code>error</code> class)
+    </div>
+    <div class="card-body">
+      <div class="previous-target">
+        <p>Content to replace via previous selector.</p>
+      </div>
+      <button hx-get="/getpage" hx-target="previous .previous-target" class="btn btn-info">previous Target</button>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

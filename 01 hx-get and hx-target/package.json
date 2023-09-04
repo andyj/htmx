@@ -1,0 +1,17 @@
+{
+  "name": "hx-get",
+  "version": "1.0.0",
+  "description": "Example for hx-get and hx-target",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js -e css,js,htm,html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
