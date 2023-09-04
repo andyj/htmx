@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopping calling htmx partials directly</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="htmx.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+  <!-- CSS Query Selector Example -->
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      hx-get calling the route /getpage on load
+    </div>
+    <div class="card-body">
+      <div hx-get="/getpage" hx-trigger="load">
+        <p>Content to replace via CSS Selector.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-1 mb-3 row card">
+    <div class="card-header">
+      A href link to call /getpage directly from a &lt;a> link
+    </div>
+    <div class="card-body">
+      <a href="/getpage">Click here to load /getpage into the browser</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

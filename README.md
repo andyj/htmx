@@ -3,4 +3,6 @@
 ## Some quick example folders of HTMX
 
 
-### 1. hx-get
+### 01 hx-get and hx-target examples
+
+### 02 stop HTXML partial being called directly
