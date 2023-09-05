@@ -9,6 +9,12 @@
 </head>
 <body>
 <div class="container mt-5">
+  <p>
+    Using the <code>hx-get</code> attribute, we showcase how content from the
+    server's <code>/getpage</code> route seamlessly replaces existing content
+    when the page loads. This approach provides a smooth user experience by
+    eliminating the need for full page reloads.
+  </p>
   <!-- CSS Query Selector Example -->
   <div class="mt-1 mb-3 row card">
     <div class="card-header">
@@ -20,6 +26,14 @@
       </div>
     </div>
   </div>
+
+  <p>
+    However, we've also implemented a safeguard against direct route access.
+    When attempting to access <code>/getpage</code> via a direct link, our
+    server-side logic prevents the content from displaying. This security
+    measure ensures content integrity while still leveraging HTMX for dynamic updates.
+  </p>
+
   <div class="mt-1 mb-3 row card">
     <div class="card-header">
       A href link to call /getpage directly from a &lt;a> link

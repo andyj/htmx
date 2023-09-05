@@ -24,8 +24,11 @@ app.get('/', (req, res) => {
 // Route for '/tabledata' URL
 // Sends the 'tabledata.html' file as a response
 app.get('/getpage', (req, res) => {
-  if(!res.locals.isHTMX) res.send("Invalid route");
-  res.sendFile(path.resolve('pages/getpage.html'));
+  if (!res.locals.isHTMX) {
+    res.send("Invalid route");
+  } else {
+    res.sendFile(path.resolve('pages/getpage.html'));
+  }
 });
 
 // Start the server and listen on the specified port
