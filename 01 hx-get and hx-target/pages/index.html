@@ -25,6 +25,12 @@
       <div id="cssSelectorExample">
         <p>Content to replace via CSS Selector.</p>
       </div>
+        <code><pre>
+&lt;button hx-get="/getpage" hx-target="#cssSelectorExample" class="btn btn-primary"&gt;CSS Selector Target&lt;/button&gt;
+&lt;div id="cssSelectorExample"&gt;
+  &lt;p&gt;Content to replace via CSS Selector.&lt;/p&gt;
+&lt;/div&gt;
+        </pre></code>
     </div>
   </div>
 
@@ -37,6 +43,10 @@
       <button hx-get="/getpage" hx-target="this" class="btn btn-secondary"><b>this</b> Target</button>
       <em>Content will be replaced in the button itself</em>
     </div>
+    <code><pre>
+&lt;button hx-get="/getpage" hx-target="this" class="btn btn-secondary">&lt;b>this&lt;/b> Target&lt;/button>
+&lt;em>Content will be replaced in the button itself&lt;/em>
+    </pre></code>
   </div>
 
   <!-- closest Example -->
@@ -50,6 +60,12 @@
         <p>Content to replace via closest selector.</p>
       </div>
     </div>
+    <code> <pre>
+&lt;div class="closest-target">
+  &lt;button hx-get="/getpage" hx-target="closest .closest-target" class="btn btn-success">closest Target&lt;/button>
+  &lt;p>Content to replace via closest selector.&lt;/p>
+&lt;/div>
+    </pre> </code>
   </div>
 
   <!-- find Example -->
@@ -58,18 +74,21 @@
       <code>find &lt;CSS selector></code> which will find the first child descendant element that matches the given CSS selector.
     </div>
     <div class="card-body">
-      <div class="find-target">
-
-
-        <button hx-get="/getpage" hx-target="find .find-internal" class="btn btn-danger">
-          find Target
-          <div class="find-internal">
-            <p>Content to replace via find selector.</p>
-          </div>
-        </button>
-
+      <div hx-get="/getpage" hx-target="find .find-internal">
+        <div class="btn btn-danger btn sm">find Target</div>
+        <div class="find-internal">
+          <p>Content to replace via find selector.</p>
+        </div>
       </div>
     </div>
+    <code><pre>
+&lt;div hx-get="/getpage" hx-target="find .find-internal">
+  &lt;div class="btn btn-danger btn sm">find Target&lt;/div>
+  &lt;div class="find-internal">
+    &lt;p>Content to replace via find selector.&lt;/p>
+  &lt;/div>
+&lt;/div>
+    </pre></code>
   </div>
 
   <!-- next Example -->
@@ -83,6 +102,12 @@
         <p>Content to replace via next selector.</p>
       </div>
     </div>
+    <code><pre>
+&lt;button hx-get="/getpage" hx-target="next .next-target" class="btn btn-warning">next Target&lt;/button>
+&lt;div class="next-target">
+  &lt;p>Content to replace via next selector.&lt;/p>
+&lt;/div>
+    </pre></code>
   </div>
 
   <!-- previous Example -->
@@ -96,6 +121,12 @@
       </div>
       <button hx-get="/getpage" hx-target="previous .previous-target" class="btn btn-info">previous Target</button>
     </div>
+    <code><pre>
+&lt;div class="previous-target">
+  &lt;p>Content to replace via previous selector.&lt;/p>
+&lt;/div>
+&lt;button hx-get="/getpage" hx-target="previous .previous-target" class="btn btn-info">previous Target&lt;/button>
+    </pre></code>
   </div>
 
 
